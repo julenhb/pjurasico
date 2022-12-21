@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="756.0" prefWidth="561.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parquejurasico.EditorController">
+   <children>
+      <ImageView fitHeight="756.0" fitWidth="561.0">
+         <image>
+            <Image url="@../../../jurassic_park_island-1440x2560.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="49.0" layoutY="24.0" prefHeight="72.0" prefWidth="463.0" text="Editor de Dinosaurios">
+         <font>
+            <Font name="Ebrima" size="48.0" />
+         </font>
+         <effect>
+            <DropShadow spread="0.63">
+               <color>
+                  <Color red="1.0" green="1.0" blue="1.0" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Label>
+      <Label layoutX="39.0" layoutY="184.0" text="Nombre">
+         <font>
+            <Font name="Franklin Gothic Medium" size="14.0" />
+         </font>
+         <effect>
+            <DropShadow height="60.57" radius="34.5475" spread="0.89" width="79.62">
+               <color>
+                  <Color red="0.18333333730697632" green="1.0" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Label>
+      <TextField fx:id="raza" layoutX="109.0" layoutY="222.0">
+         <effect>
+            <DropShadow />
+         </effect></TextField>
+      <TextField fx:id="nombre" layoutX="109.0" layoutY="179.0">
+         <effect>
+            <DropShadow />
+         </effect></TextField>
+      <TextField fx:id="altura" layoutX="111.0" layoutY="305.0">
+         <effect>
+            <DropShadow />
+         </effect></TextField>
+      <TextField fx:id="peso" layoutX="111.0" layoutY="348.0">
+         <effect>
+            <DropShadow />
+         </effect></TextField>
+      <Label layoutX="387.0" layoutY="105.0" text="Recinto">
+         <font>
+            <Font name="Franklin Gothic Medium" size="16.0" />
+         </font>
+         <effect>
+            <DropShadow height="51.41" radius="31.64" spread="0.81" width="77.15">
+               <color>
+                  <Color green="1.0" blue="0.47546517848968506" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Label>
+      <ComboBox fx:id="recinto" layoutX="338.0" layoutY="136.0" onAction="#actualizarLista" prefWidth="150.0" promptText="Seleccionar">
+         <effect>
+            <DropShadow />
+         </effect></ComboBox>
+      <ComboBox fx:id="dieta" layoutX="110.0" layoutY="265.0" prefHeight="26.0" prefWidth="150.0" promptText="Seleccionar">
+         <effect>
+            <DropShadow />
+         </effect></ComboBox>
+      <ListView fx:id="listDinos" layoutX="307.0" layoutY="179.0" prefHeight="410.0" prefWidth="213.0">
+         <effect>
+            <DropShadow spread="0.45" />
+         </effect></ListView>
+      <Button fx:id="nuevo" layoutX="61.0" layoutY="425.0" mnemonicParsing="false" onAction="#addDino" prefHeight="33.0" prefWidth="63.0" text="Nuevo">
+         <font>
+            <Font name="Franklin Gothic Medium" size="14.0" />
+         </font>
+         <effect>
+            <Lighting bumpInput="$null">
+               <light>
+                  <Light.Distant>
+                     <color>
+                        <Color red="0.5407407283782959" green="0.9770370125770569" blue="1.0" />
+                     </color>
+                  </Light.Distant>
+               </light>
+            </Lighting>
+         </effect>
+      </Button>
+      <Button fx:id="borrar" layoutX="62.0" layoutY="495.0" mnemonicParsing="false" onAction="#deleteDino" prefHeight="33.0" prefWidth="63.0" text="Borrar">
+         <font>
+            <Font name="Franklin Gothic Medium" size="14.0" />
+         </font>
+         <effect>
+            <Lighting bumpInput="$null">
+               <light>
+                  <Light.Distant>
+                     <color>
+                        <Color red="1.0" green="0.37037035822868347" blue="0.37037035822868347" />
+                     </color>
+                  </Light.Distant>
+               </light>
+            </Lighting>
+         </effect>
+      </Button>
+      <Button fx:id="meteo" layoutX="307.0" layoutY="608.0" mnemonicParsing="false" onAction="#extintion" prefHeight="33.0" prefWidth="213.0" text="Meteo">
+         <font>
+            <Font name="Franklin Gothic Medium" size="14.0" />
+         </font>
+         <effect>
+            <DropShadow height="25.68" radius="11.754999999999999" spread="0.36" width="23.34">
+               <color>
+                  <Color red="0.8736842274665833" green="0.003235867479816079" blue="0.003235867479816079" />
+               </color>
+               <input>
+                  <InnerShadow />
+               </input>
+            </DropShadow>
+         </effect>
+      </Button>
+      <Button fx:id="volver" layoutX="456.0" layoutY="706.0" mnemonicParsing="false" onAction="#switchToPrimary" prefHeight="33.0" prefWidth="63.0" text="Volver">
+         <font>
+            <Font name="Franklin Gothic Medium" size="14.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Label layoutX="63.0" layoutY="96.0" prefHeight="56.0" prefWidth="234.0" text="Selecciona un recinto para visualizar tus dinosaurios" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Franklin Gothic Medium" size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="lazaro" layoutX="55.0" layoutY="608.0" mnemonicParsing="false" onAction="#lazaro" prefHeight="33.0" prefWidth="213.0" text="Lázaro">
+         <font>
+            <Font name="Franklin Gothic Medium" size="14.0" />
+         </font>
+         <effect>
+            <DropShadow height="23.33" radius="13.504999999999999" spread="0.45" width="32.69">
+               <color>
+                  <Color red="0.9333333373069763" green="1.0" blue="1.1102230246251565E-16" />
+               </color>
+               <input>
+                  <InnerShadow />
+               </input>
+            </DropShadow>
+         </effect>
+      </Button>
+      <Label layoutX="36.0" layoutY="355.0" text="Peso (kg)">
+         <font>
+            <Font name="Franklin Gothic Medium" size="14.0" />
+         </font>
+         <effect>
+            <DropShadow height="60.57" radius="34.5475" spread="0.89" width="79.62">
+               <color>
+                  <Color red="0.18333333730697632" green="1.0" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Label>
+      <Label layoutX="56.0" layoutY="227.0" text="Raza">
+         <font>
+            <Font name="Franklin Gothic Medium" size="14.0" />
+         </font>
+         <effect>
+            <DropShadow height="70.1" radius="36.93" spread="0.9" width="79.62">
+               <color>
+                  <Color red="0.18333333730697632" green="1.0" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Label>
+      <Label layoutX="25.0" layoutY="312.0" text="Altura (cm)">
+         <font>
+            <Font name="Franklin Gothic Medium" size="14.0" />
+         </font>
+         <effect>
+            <DropShadow height="60.57" radius="34.5475" spread="0.89" width="79.62">
+               <color>
+                  <Color red="0.18333333730697632" green="1.0" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Label>
+      <Label layoutX="56.0" layoutY="270.0" text="Dieta">
+         <font>
+            <Font name="Franklin Gothic Medium" size="14.0" />
+         </font>
+         <effect>
+            <DropShadow height="60.57" radius="34.5475" spread="0.89" width="79.62">
+               <color>
+                  <Color green="1.0" blue="0.9523809552192688" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Label>
+      <Label fx:id="errorVacio" layoutX="46.0" layoutY="672.0" prefHeight="26.0" prefWidth="482.0" text="AAAAA" textFill="RED" visible="false">
+         <font>
+            <Font name="Franklin Gothic Demi" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="errorRecinto" layoutX="46.0" layoutY="651.0" prefHeight="26.0" prefWidth="342.0" text="AAAAA" textFill="RED" visible="false">
+         <font>
+            <Font name="Franklin Gothic Demi" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="errorNumero" layoutX="46.0" layoutY="693.0" prefHeight="26.0" prefWidth="402.0" text="AAAAA" textFill="RED" visible="false">
+         <font>
+            <Font name="Franklin Gothic Demi" size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="limpiar" layoutX="186.0" layoutY="495.0" mnemonicParsing="false" onAction="#limpiarCampos" prefHeight="33.0" prefWidth="74.0" text="Limpiar">
+         <font>
+            <Font name="Franklin Gothic Medium" size="13.0" />
+         </font>
+      </Button>
+      <Label fx:id="errorDinosaurio" layoutX="43.0" layoutY="563.0" prefHeight="26.0" prefWidth="402.0" text="Selecciona a un dinosario de la lista" textFill="RED" visible="false">
+         <font>
+            <Font name="Franklin Gothic Demi" size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="trasladar" layoutX="184.0" layoutY="425.0" mnemonicParsing="false" onAction="#mostrarTraslado" prefHeight="33.0" prefWidth="74.0" text="Trasladar">
+         <font>
+            <Font name="Franklin Gothic Medium" size="13.0" />
+         </font>
+         <effect>
+            <Lighting surfaceScale="0.24">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant>
+                     <color>
+                        <Color red="0.4254385828971863" green="0.9473684430122375" blue="0.4254385828971863" />
+                     </color>
+                  </Light.Distant>
+               </light>
+            </Lighting>
+         </effect>
+      </Button>
+      <AnchorPane fx:id="moverDino" layoutX="39.0" layoutY="181.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="318.0" prefWidth="255.0" style="-fx-background-color: #FFFFFF;" visible="false">
+         <children>
+            <Label layoutX="25.0" layoutY="44.0" prefHeight="66.0" prefWidth="213.0" text="Selecciona a qué recinto va a ir " wrapText="true">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="vale" layoutX="23.0" layoutY="180.0" mnemonicParsing="false" onAction="#trasladar" prefHeight="46.0" prefWidth="61.0" text="Vale">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="14.0" />
+               </font>
+               <effect>
+                  <Lighting surfaceScale="1.96">
+                     <bumpInput>
+                        <Glow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.20000000298023224" green="1.0" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Button fx:id="cancel" layoutX="113.0" layoutY="180.0" mnemonicParsing="false" onAction="#cancelarTraslado" prefHeight="46.0" prefWidth="98.0" text="Cancelar">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="14.0" />
+               </font>
+               <effect>
+                  <Lighting surfaceScale="1.96">
+                     <bumpInput>
+                        <Glow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="1.0" green="0.24761904776096344" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <ComboBox fx:id="recTraslado" layoutX="23.0" layoutY="111.0" prefWidth="150.0" promptText="Seleccionar" />
+            <Label fx:id="nDinoTraslado" layoutX="58.0" layoutY="75.0" prefHeight="26.0" prefWidth="158.0" text="XXXXXXX" wrapText="true">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="errorTraslado" layoutX="25.0" layoutY="238.0" prefHeight="66.0" prefWidth="213.0" text="Selecciona a qué recinto va a ir " textFill="#e81313" visible="false" wrapText="true">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

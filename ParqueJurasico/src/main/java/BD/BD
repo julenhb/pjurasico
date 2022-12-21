@@ -1,0 +1,40 @@
+DROP DATABASE IF EXISTS pjurasico;
+CREATE DATABASE pjurasico;
+USE pjurasico;
+
+CREATE TABLE recinto(
+id_recinto INT auto_increment NOT NULL,
+nombre VARCHAR(80) NOT NULL,
+num_dinos INT(100),
+
+PRIMARY KEY (id_recinto)
+);
+
+CREATE TABLE dinosaurio(
+id_recinto INT NOT NULL,
+id_dino INT auto_increment NOT NULL,
+nombre VARCHAR(80) UNIQUE,
+raza VARCHAR(80) NOT NULL,
+dieta VARCHAR(80) NOT NULL,
+altura INT(80),
+peso INT(80),
+vivo boolean NOT NULL,
+
+PRIMARY KEY (id_dino),
+FOREIGN KEY (id_recinto)
+        REFERENCES recinto(id_recinto)
+        ON DELETE CASCADE
+);
+
+DESCRIBE recinto;
+DESCRIBE dinosaurio;
+
+SELECT*FROM recinto;
+SELECT*FROM dinosaurio;
+
+INSERT INTO recinto VALUES
+(1, "Isla Nublar", NULL),
+(2, "Isla Sorna", NULL),
+(3, "Isla Pena", NULL),
+(4, "Isla Matanceros", NULL),
+(5, "Isla Tacaño", NULL);
